@@ -1,0 +1,93 @@
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:08:01.380399", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:08:38.602798", "role": "user", "text": "걷고 있어", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:08:38.603067", "role": "bot", "text": "그림 속 너는 지금 어떤 기분이야?", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:08:46.514574", "role": "user", "text": "우울해", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:08:46.514828", "role": "bot", "text": "오늘은 왜 이렇게 그리고 싶었어?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:08:51.314449", "role": "user", "text": "마음이 슬퍼서", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:08:51.314656", "role": "bot", "text": "그림 속 너에게 해주고 싶은 말은 뭐야?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:08:55.734410", "role": "user", "text": "힘내라", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:08:55.734604", "role": "bot", "text": "내일의 너는 어떤 모습이면 좋겠어?", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:09:44.098708", "role": "user", "text": "밝은모습", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:27:28.291586", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:35:32.485422", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:36:04.471065", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:36:16.191063", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:18.378869", "role": "user", "text": "걷고 있어", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:18.379189", "role": "bot", "text": "그림 속 너는 지금 어떤 기분이야?", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:23.573876", "role": "user", "text": "우울해", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:23.574430", "role": "bot", "text": "오늘은 왜 이렇게 그리고 싶었어?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:26.549983", "role": "user", "text": "우울해서", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:26.550108", "role": "bot", "text": "그림 속 너에게 해주고 싶은 말은 뭐야?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:29.101434", "role": "user", "text": "힘내라", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:29.101839", "role": "bot", "text": "내일의 너는 어떤 모습이면 좋겠어?", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:33.019917", "role": "user", "text": "밝고 건강한 모습", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:36.879031", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:41.092697", "role": "user", "text": "걷고 있어", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:41.092932", "role": "bot", "text": "그림 속 너는 지금 어떤 기분이야?", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:48.610146", "role": "user", "text": "우울해", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:48.610550", "role": "bot", "text": "오늘은 왜 이렇게 그리고 싶었어?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:53.950927", "role": "user", "text": "그냥 우울해서", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:37:53.951118", "role": "bot", "text": "그림 속 너에게 해주고 싶은 말은 뭐야?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:39:07.595580", "role": "user", "text": "힘내라", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:39:07.595769", "role": "bot", "text": "내일의 너는 어떤 모습이면 좋겠어?", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T09:39:12.755132", "role": "user", "text": "늠늠한 모습", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:02.649195", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:09.109405", "role": "user", "text": "안녕", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:09.109824", "role": "bot", "text": "그림 속 너는 지금 어떤 기분이야?", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:10.155422", "role": "user", "text": "테스트", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:10.155626", "role": "bot", "text": "오늘은 왜 이렇게 그리고 싶었어?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:10.795789", "role": "user", "text": "중", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:10.795984", "role": "bot", "text": "그림 속 너에게 해주고 싶은 말은 뭐야?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:12.159676", "role": "user", "text": "입니다", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:12.159873", "role": "bot", "text": "내일의 너는 어떤 모습이면 좋겠어?", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:39:20.158489", "role": "user", "text": "밝은모습!", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:41:42.500497", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:41:47.638053", "role": "user", "text": "테스트", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:41:47.638301", "role": "bot", "text": "그림 속 너는 지금 어떤 기분이야?", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:11.527660", "role": "user", "text": "테스트중", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:11.528064", "role": "bot", "text": "오늘은 왜 이렇게 그리고 싶었어?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:12.987057", "role": "user", "text": "안녕", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:12.987257", "role": "bot", "text": "그림 속 너에게 해주고 싶은 말은 뭐야?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:13.996471", "role": "user", "text": "테스트", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:13.996871", "role": "bot", "text": "내일의 너는 어떤 모습이면 좋겠어?", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:15.253774", "role": "user", "text": "중", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:23.210139", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:25.654726", "role": "user", "text": "안녕", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:25.654992", "role": "bot", "text": "그림 속 너는 지금 어떤 기분이야?", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:26.775071", "role": "user", "text": "나는", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:26.775504", "role": "bot", "text": "오늘은 왜 이렇게 그리고 싶었어?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:28.223592", "role": "user", "text": "테스트", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:28.223786", "role": "bot", "text": "그림 속 너에게 해주고 싶은 말은 뭐야?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:29.459238", "role": "user", "text": "중이야", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:29.459486", "role": "bot", "text": "내일의 너는 어떤 모습이면 좋겠어?", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:31.799511", "role": "user", "text": "그냥", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:39.834105", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:42.051119", "role": "user", "text": "안녕", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:42.051521", "role": "bot", "text": "그림 속 너는 지금 어떤 기분이야?", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:42.889914", "role": "user", "text": "나는", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:42.890416", "role": "bot", "text": "오늘은 왜 이렇게 그리고 싶었어?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:43.880068", "role": "user", "text": "테스트", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:43.880476", "role": "bot", "text": "그림 속 너에게 해주고 싶은 말은 뭐야?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:45.166413", "role": "user", "text": "중이야", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:45.166816", "role": "bot", "text": "내일의 너는 어떤 모습이면 좋겠어?", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:42:47.732802", "role": "user", "text": "다운로드 가자", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:14.450070", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:17.023280", "role": "user", "text": "테스트 중", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:17.023487", "role": "bot", "text": "그림 속 너는 지금 어떤 기분이야?", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:18.104975", "role": "user", "text": "안녕", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:18.105166", "role": "bot", "text": "오늘은 왜 이렇게 그리고 싶었어?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:18.798301", "role": "user", "text": "나는", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:18.798706", "role": "bot", "text": "그림 속 너에게 해주고 싶은 말은 뭐야?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:19.917068", "role": "user", "text": "테스트 중", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:19.917259", "role": "bot", "text": "내일의 너는 어떤 모습이면 좋겠어?", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:21.585814", "role": "user", "text": "대화 저장 가자", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:30.957910", "role": "bot", "text": "그림 속 너는 지금 무엇을 하고 있어?", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:33.797858", "role": "user", "text": "사용자", "turn": 1}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:33.798271", "role": "bot", "text": "그림 속 너는 지금 어떤 기분이야?", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:34.985956", "role": "user", "text": "편의성", "turn": 2}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:34.986149", "role": "bot", "text": "오늘은 왜 이렇게 그리고 싶었어?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:35.913232", "role": "user", "text": "좋지?", "turn": 3}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:35.913636", "role": "bot", "text": "그림 속 너에게 해주고 싶은 말은 뭐야?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:37.483130", "role": "user", "text": "괜찮아?", "turn": 4}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:37.483326", "role": "bot", "text": "내일의 너는 어떤 모습이면 좋겠어?", "turn": 5}
+{"session_id": "sess_001", "timestamp": "2025-11-19T10:44:38.862825", "role": "user", "text": "힘내", "turn": 5}
