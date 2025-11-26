@@ -1,0 +1,27 @@
+{
+  "static_memory": {
+    "user_self_keywords": ["상냥함", "용감함", "창의적"],
+    "user_drawing_info": {
+      "title": "숲속 모험",
+      "age_in_picture": "10살",
+      "current_action": "탐험하고 있어",
+      "future_prediction": "조금 더 깊은 곳으로 가고 있어",
+      "message_to_self": "조금만 더 힘내자!"
+    },
+    "user_analysis_info": {
+      "ai_interpretation": "활동적이고 상상력이 풍부함",
+      "practice_guide": "느낌을 더 구체적으로 표현하도록 유도",
+      "drawing_time_sec": 120,
+      "drawing_speed": "빠름",
+      "line_count": 85,
+      "erase_count": 3
+    },
+    "user_hero_info": {
+      "likes": ["색칠하기", "고양이"],
+      "abilities": ["집중력", "그리기"],
+      "strength_points": ["친절함"],
+      "weakness_points": ["조금 급함"],
+      "potentials": ["미술적 감수성 성장"]
+    }
+  }
+}
