@@ -847,10 +847,40 @@ def main():
     if state == 3 and sub == 6:
         can_user_input = False
 
+    # # 유저 인풋
+    # if can_user_input:
+    #     user_input = st.chat_input("봉봉에게 마음을 이야기해줘 😊")
+    # else:
+    #     user_input = None
+
+    # --- 입력 가능 substep 정의: 유저 입력 턴만 가능 ---
+    can_user_input = (sub in [2, 4, 6])
+
+    # 항상 기본값 먼저 선언 (오류 방지)
+    user_input = None  
+
     if can_user_input:
-        user_input = st.chat_input("봉봉에게 마음을 이야기해줘 😊")
+        raw_input = st.chat_input("봉봉에게 마음을 이야기해줘 😊")
+
+        if raw_input:  # 입력이 들어온 경우
+            # 공백 제외 기준 글자 수
+            char_count = len(raw_input.replace(" ", "").replace("\n", ""))
+
+            # 개발자 터미널 로그
+            print(f"[USER INPUT RECEIVED] length={char_count} chars (공백 제외)")
+
+            # 200자 초과 시 자동 자르기
+            if char_count > 200:
+                # 앞에서부터 200글자만 남김
+                trimmed = raw_input.replace(" ", "").replace("\n", "")[:200]
+                user_input = trimmed
+                print(f"[TRIMMED] Input exceeded 200 chars → trimmed to 200.")
+            else:
+                user_input = raw_input
+
     else:
         user_input = None
+
 
     process_flow(user_input)
     

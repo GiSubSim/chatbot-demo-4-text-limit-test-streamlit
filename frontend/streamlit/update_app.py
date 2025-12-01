@@ -2,7 +2,6 @@ import os
 import sys
 import json
 from datetime import datetime
-import time
 import streamlit as st
 from dotenv import load_dotenv
 import pandas as pd
@@ -180,10 +179,6 @@ def generate_empathy_free_question(user_message: str, stage: int, turn: int) -> 
     ])
 
     # GPT 호출
-
-    # GPT 호출 + 응답시간 계산
-    start = time.time()
-
     response = client.chat.completions.create(
         model=MODEL_NAME,
         messages=[
@@ -197,10 +192,8 @@ def generate_empathy_free_question(user_message: str, stage: int, turn: int) -> 
             {"role": "user", "content": prompt_text},
         ],
     )
-    elapsed = round(time.time() - start, 2)  # ⏱️ 완료
-    reply = response.choices[0].message.content
-    reply_with_time = f"{reply}\n\n🕒 {elapsed}s"  # UI 말풍선 표시
 
+    reply = response.choices[0].message.content
 
     # 생성된 응답에서 질문 문장을 추출해 자유 질문 목록에 누적
     question_line = extract_question_from_reply(reply)
@@ -214,7 +207,6 @@ def generate_empathy_free_question(user_message: str, stage: int, turn: int) -> 
         st.session_state["generated_questions"].append(question_line)
 
     debug_block("GPT FREE QUESTION RESULT", [
-        f"[⏱️ RESPONSE TIME] {elapsed}s",
         "---------------- GPT RAW RESPONSE ----------------",
         reply,
         "",
@@ -226,7 +218,7 @@ def generate_empathy_free_question(user_message: str, stage: int, turn: int) -> 
         build_generated_questions_str()
     ])
 
-    return reply_with_time
+    return reply
 
 
 
@@ -277,9 +269,7 @@ def generate_empathy_rule_question(prev_answer: str, stage: int, rule_question: 
     ])
 
 
-    # GPT 호출 + 응답시간 계산
-    start = time.time()
-
+    # GPT 호출
     response = client.chat.completions.create(
         model=MODEL_NAME,
         messages=[
@@ -295,17 +285,14 @@ def generate_empathy_rule_question(prev_answer: str, stage: int, rule_question: 
         ],
     )
 
-    elapsed = round(time.time() - start, 2)  # ⏱️ 완료
     reply = response.choices[0].message.content
-    reply_with_time = f"{reply}\n\n🕒 {elapsed}s"  # UI 말풍선 표시
 
     debug_block("GPT RULE QUESTION RESULT", [
-        f"[⏱️ RESPONSE TIME] {elapsed}s",
         "---------------- GPT RAW RESPONSE ----------------",
         reply
     ])
 
-    return reply_with_time
+    return reply
 
 
 
@@ -347,9 +334,7 @@ def generate_empathy_ending_message(user_message: str) -> str:
         prompt_text
     ])
 
-    # GPT 호출 + 응답시간 계산
-    start = time.time()
-
+    # GPT 호출
     response = client.chat.completions.create(
         model=MODEL_NAME,
         messages=[
@@ -364,17 +349,15 @@ def generate_empathy_ending_message(user_message: str) -> str:
         ],
     )
 
-    elapsed = round(time.time() - start, 2)  # ⏱️ 완료
+
     reply = response.choices[0].message.content
-    reply_with_time = f"{reply}\n\n🕒 {elapsed}s"  # UI 말풍선 표시
 
     debug_block("GPT ENDING MESSAGE RESULT", [
-        f"[⏱️ RESPONSE TIME] {elapsed}s",
         "---------------- GPT RAW RESPONSE ----------------",
         reply
     ])
 
-    return reply_with_time
+    return reply
 
 
 
@@ -847,10 +830,31 @@ def main():
     if state == 3 and sub == 6:
         can_user_input = False
 
+    # 항상 기본값 먼저 선언 (오류 방지)
+    user_input = None  
+
     if can_user_input:
-        user_input = st.chat_input("봉봉에게 마음을 이야기해줘 😊")
+        raw_input = st.chat_input("봉봉에게 마음을 이야기해줘 😊")
+
+        if raw_input:  # 입력이 들어온 경우
+            # 공백 제외 기준 글자 수
+            char_count = len(raw_input.replace(" ", "").replace("\n", ""))
+
+            # 개발자 터미널 로그
+            print(f"[USER INPUT RECEIVED] length={char_count} chars (공백 제외)")
+
+            # 200자 초과 시 자동 자르기
+            if char_count > 200:
+                # 앞에서부터 200글자만 남김
+                trimmed = raw_input.replace(" ", "").replace("\n", "")[:200]
+                user_input = trimmed
+                print(f"[TRIMMED] Input exceeded 200 chars → trimmed to 200.")
+            else:
+                user_input = raw_input
+
     else:
         user_input = None
+
 
     process_flow(user_input)
     
