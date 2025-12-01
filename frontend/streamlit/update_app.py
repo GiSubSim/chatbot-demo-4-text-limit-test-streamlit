@@ -787,6 +787,68 @@ def main():
     st.set_page_config(layout="centered", page_title="Chatbot Demo – Step 4")
 
     st.markdown("""
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <style>
+        :root {
+            --app-height: 100vh;
+        }
+
+        /* 전체 화면 높이 조정 */
+        body, .block-container {
+            height: var(--app-height);
+            overflow-y: auto !important;
+            overscroll-behavior: contain;
+        }
+
+        /* 입력창 고정 */
+        .chat-input-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 14px;
+            background: white;
+            border-top: 1px solid #ddd;
+            z-index: 10000;
+        }
+
+        /* 입력창 위쪽에 메시지가 숨기지 않도록 여백 확보 */
+        .stChatInput {
+            margin-bottom: 120px !important;
+        }
+
+        /* Android에서 키보드 올라올 때 입력창 가려짐 방지 */
+        @supports (height: 100dvh) {
+            :root {
+                --app-height: 100dvh;
+            }
+        }
+    </style>
+
+    <script>
+        // iOS Safari, Android Chrome 기종별로 동작하는 반응형 safe area 대응
+        function updateAppHeight() {
+            const appHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+            document.documentElement.style.setProperty('--app-height', `${appHeight}px`);
+        }
+
+        // 키보드 열릴 때 scroll bottom 유지
+        function scrollToBottom() {
+            window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+        }
+
+        window.addEventListener('resize', () => {
+            updateAppHeight();
+            setTimeout(scrollToBottom, 80);
+        });
+
+        updateAppHeight();
+    </script>
+    """, unsafe_allow_html=True)
+
+
+    st.markdown("""
         <style>
         .top-right-info {
             position:absolute; top:10px; right:20px;
