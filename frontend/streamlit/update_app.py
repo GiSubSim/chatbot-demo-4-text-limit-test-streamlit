@@ -487,22 +487,26 @@ def add_message(role: str, text: str):
 # -------------------------------------------------
 def render_chat_messages():
     for msg in st.session_state["messages"]:
-        if msg["role"] == "bot":
-            st.markdown(f"""
-            <div class="chat-wrapper chat-left">
-                <div class="chat-bubble bot-bubble">
-                    🧸 <b>봉봉</b><br>{msg['message']}
+        role = msg["role"]
+
+        # 정렬/스타일 클래스 분리
+        css_align = "chat-right" if role == "user" else "chat-left"
+        css_bubble = "user-bubble" if role == "user" else "bot-bubble"
+
+        # 이름 라벨
+        name_label = "🌟 <b>나</b>" if role == "user" else "🧸 <b>봉봉</b>"
+
+        st.markdown(
+            f"""
+            <div class="chat-wrapper {css_align}">
+                <div class="chat-bubble {css_bubble}">
+                    {name_label}<br>{msg['message']}
                 </div>
             </div>
-            """, unsafe_allow_html=True)
-        else:
-            st.markdown(f"""
-            <div class="chat-wrapper chat-right">
-                <div class="chat-bubble user-bubble">
-                    🌟 <b>나</b><br>{msg['message']}
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+            """,
+            unsafe_allow_html=True
+        )
+
 
 
 
@@ -815,17 +819,23 @@ def main():
     st.markdown("""
     <style>
 
-    /* 기본 (데스크탑) */
+    .chat-wrapper {
+        width: 100% !important;
+        display: flex !important;
+        margin: 10px 0 !important;
+    }
+
+    .chat-left { justify-content: flex-start !important; }
+    .chat-right { justify-content: flex-end !important; }
+
     .chat-bubble {
-        max-width: 60% !important; /* 웹에서는 더 좁아지도록 */
-        display: inline-block;
-        padding: 14px 16px;
-        border-radius: 14px;
-        font-size: 16px;
-        line-height: 1.55;
-        word-break: break-word;
-        background: #eee;
-        color: #000;
+        display: inline-block !important;
+        padding: 14px 16px !important;
+        border-radius: 14px !important;
+        font-size: 16px !important;
+        line-height: 1.55 !important;
+        word-break: break-word !important;
+        max-width: 60% !important; /* ⬅️ PC 기본 좁게 */
     }
 
     /* bot 색상 */
@@ -834,27 +844,25 @@ def main():
     /* user 색상 */
     .user-bubble { background: #d1e7ff !important; }
 
-    /* --------------- */
-    /* 모바일 (phone) */
-    /* --------------- */
+    /* ========================= */
+    /*       반응형 규칙         */
+    /* ========================= */
+
+    /* 📱 스마트폰 */
     @media (max-width: 767px) {
         .chat-bubble {
             max-width: 95% !important;
         }
     }
 
-    /* --------------------------- */
-    /* 태블릿 (세로/기본)          */
-    /* --------------------------- */
-    @media (min-width: 768px) and (max-width: 1200px) {
+    /* 📲 태블릿 세로 */
+    @media (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
         .chat-bubble {
             max-width: 80% !important;
         }
     }
 
-    /* --------------------------- */
-    /* 태블릿 (가로모드만 넓게)     */
-    /* --------------------------- */
+    /* 📲 태블릿 가로 */
     @media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
         .chat-bubble {
             max-width: 90% !important;
