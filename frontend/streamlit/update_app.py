@@ -449,37 +449,62 @@ def add_message(role: str, text: str):
     append_turn_to_file(role, text)
 
 
+# # -------------------------------------------------
+# # UI 렌더링
+# # -------------------------------------------------
+# def render_chat_messages():
+#     for msg in st.session_state["messages"]:
+#         if msg["role"] == "bot":
+#             st.markdown(f"""
+#             <div style="text-align:left;">
+#                 <div style="
+#                     display:inline-block; background:#f1f0f0;
+#                     padding:12px 15px; border-radius:12px;
+#                     margin:5px 0; max-width:70%;
+#                     font-size:16px;
+#                     color:#000000;">
+#                     🧸 <b>봉봉</b><br>{msg['message']}
+#                 </div>
+#             </div>
+#             """, unsafe_allow_html=True)
+#         else:
+#             st.markdown(f"""
+#             <div style="text-align:right;">
+#                 <div style="
+#                     display:inline-block; background:#d1e7ff;
+#                     padding:12px 15px; border-radius:12px;
+#                     margin:5px 0; max-width:70%;
+#                     font-size:16px;
+#                     color:#000000;">
+#                     🌟 <b>나</b><br>{msg['message']}
+#                 </div>
+#             </div>
+#             """, unsafe_allow_html=True)
+
+
 # -------------------------------------------------
-# UI 렌더링
+# UI 렌더링 - 탭에서 메세지 너비 조정
 # -------------------------------------------------
 def render_chat_messages():
     for msg in st.session_state["messages"]:
         if msg["role"] == "bot":
             st.markdown(f"""
-            <div style="text-align:left;">
-                <div style="
-                    display:inline-block; background:#f1f0f0;
-                    padding:12px 15px; border-radius:12px;
-                    margin:5px 0; max-width:70%;
-                    font-size:16px;
-                    color:#000000;">
+            <div class="chat-wrapper chat-left">
+                <div class="chat-bubble bot-bubble">
                     🧸 <b>봉봉</b><br>{msg['message']}
                 </div>
             </div>
             """, unsafe_allow_html=True)
         else:
             st.markdown(f"""
-            <div style="text-align:right;">
-                <div style="
-                    display:inline-block; background:#d1e7ff;
-                    padding:12px 15px; border-radius:12px;
-                    margin:5px 0; max-width:70%;
-                    font-size:16px;
-                    color:#000000;">
+            <div class="chat-wrapper chat-right">
+                <div class="chat-bubble user-bubble">
                     🌟 <b>나</b><br>{msg['message']}
                 </div>
             </div>
             """, unsafe_allow_html=True)
+
+
 
 
 # -------------------------------------------------
@@ -786,81 +811,65 @@ def process_flow(user_input=None):
 def main():
     st.set_page_config(layout="centered", page_title="Chatbot Demo – Step 4")
 
+    # 🔧 반응형 말풍선 스타일 적용 (PC 그대로, 모바일/패드만 확대)
     st.markdown("""
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
     <style>
-        :root {
-            --app-height: 100vh;
-        }
 
-        /* 전체 화면 높이 조정 */
-        body, .block-container {
-            height: var(--app-height);
-            overflow-y: auto !important;
-            overscroll-behavior: contain;
-        }
+    .chat-wrapper {
+        width: 100%;
+        display: flex;
+        margin: 8px 0;
+    }
 
-        /* 입력창 고정 */
-        .chat-input-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 14px;
-            background: white;
-            border-top: 1px solid #ddd;
-            z-index: 10000;
-        }
+    .chat-left {
+        justify-content: flex-start;
+    }
 
-        /* 입력창 위쪽에 메시지가 숨기지 않도록 여백 확보 */
-        .stChatInput {
-            margin-bottom: 120px !important;
-        }
+    .chat-right {
+        justify-content: flex-end;
+    }
 
-        /* Android에서 키보드 올라올 때 입력창 가려짐 방지 */
-        @supports (height: 100dvh) {
-            :root {
-                --app-height: 100dvh;
-            }
+    .chat-bubble {
+        display: inline-block;
+        padding: 12px 15px;
+        border-radius: 14px;
+        font-size: 16px;
+        line-height: 1.48;
+        word-break: break-word;
+        background: #eee;
+        color: #000;
+        max-width: 70%;
+    }
+
+    /* bot 색상 */
+    .bot-bubble {
+        background: #f1f0f0;
+    }
+
+    /* user 색상 */
+    .user-bubble {
+        background: #d1e7ff;
+    }
+
+    /* --------------- 반응형 적용 --------------- */
+
+    /* 태블릿 (iPad, Galaxy Tab) */
+    @media (max-width: 1024px) {
+        .chat-bubble {
+            max-width: 85% !important;
         }
+    }
+
+    /* 모바일 */
+    @media (max-width: 768px) {
+        .chat-bubble {
+            max-width: 92% !important;
+        }
+    }
+
     </style>
-
-    <script>
-        // iOS Safari, Android Chrome 기종별로 동작하는 반응형 safe area 대응
-        function updateAppHeight() {
-            const appHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-            document.documentElement.style.setProperty('--app-height', `${appHeight}px`);
-        }
-
-        // 키보드 열릴 때 scroll bottom 유지
-        function scrollToBottom() {
-            window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
-        }
-
-        window.addEventListener('resize', () => {
-            updateAppHeight();
-            setTimeout(scrollToBottom, 80);
-        });
-
-        updateAppHeight();
-    </script>
     """, unsafe_allow_html=True)
 
-
-    st.markdown("""
-        <style>
-        .top-right-info {
-            position:absolute; top:10px; right:20px;
-            font-size:14px; color:#999;
-        }
-        div[role="radiogroup"] > label { margin-bottom: 5px; }
-        .stSuccess { text-align: center; }
-        </style>
-        <div class="top-right-info">
-            (담당자: 미술인지심리연구소 심기섭)
-        </div>
-    """, unsafe_allow_html=True)
 
     # 타이틀
     st.markdown("""
