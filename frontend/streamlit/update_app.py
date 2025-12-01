@@ -815,26 +815,17 @@ def main():
     st.markdown("""
     <style>
 
-    /* 기본 스타일 */
-    .chat-wrapper {
-        width: 100% !important;
-        display: flex !important;
-        margin: 8px 0 !important;
-    }
-
-    .chat-left { justify-content: flex-start !important; }
-    .chat-right { justify-content: flex-end !important; }
-
+    /* 기본 (데스크탑) */
     .chat-bubble {
-        display: inline-block !important;
-        padding: 14px 16px !important;
-        border-radius: 14px !important;
-        font-size: 16px !important;
-        line-height: 1.55 !important;
-        word-break: break-word !important;
-        background: #eee !important;
-        color: #000 !important;
-        max-width: 70% !important; /* 기본 PC / 태블릿 세로 */
+        max-width: 60% !important; /* 웹에서는 더 좁아지도록 */
+        display: inline-block;
+        padding: 14px 16px;
+        border-radius: 14px;
+        font-size: 16px;
+        line-height: 1.55;
+        word-break: break-word;
+        background: #eee;
+        color: #000;
     }
 
     /* bot 색상 */
@@ -843,35 +834,36 @@ def main():
     /* user 색상 */
     .user-bubble { background: #d1e7ff !important; }
 
-    /* ------------------------- */
-    /* 모바일 (스마트폰)         */
-    /* ------------------------- */
+    /* --------------- */
+    /* 모바일 (phone) */
+    /* --------------- */
     @media (max-width: 767px) {
         .chat-bubble {
             max-width: 95% !important;
         }
     }
 
-    /* ------------------------- */
-    /* 태블릿 가로 모드만 확장   */
-    /* ------------------------- */
-    @media (min-width: 768px) and (max-width: 1400px) and (orientation: landscape) {
+    /* --------------------------- */
+    /* 태블릿 (세로/기본)          */
+    /* --------------------------- */
+    @media (min-width: 768px) and (max-width: 1200px) {
+        .chat-bubble {
+            max-width: 80% !important;
+        }
+    }
+
+    /* --------------------------- */
+    /* 태블릿 (가로모드만 넓게)     */
+    /* --------------------------- */
+    @media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
         .chat-bubble {
             max-width: 90% !important;
         }
     }
 
-    /* ------------------------- */
-    /* 태블릿 세로 모드 유지     */
-    /* ------------------------- */
-    @media (min-width: 768px) and (max-width: 1400px) and (orientation: portrait) {
-        .chat-bubble {
-            max-width: 70% !important;
-        }
-    }
-
     </style>
     """, unsafe_allow_html=True)
+
 
 
 
