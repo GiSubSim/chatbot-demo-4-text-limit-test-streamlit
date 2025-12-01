@@ -814,27 +814,22 @@ def main():
     # 🔧 반응형 말풍선 스타일 적용 (PC 그대로, 모바일/패드만 확대)
     st.markdown("""
     <style>
-
+    /* 기본 PC 스타일 유지 */
     .chat-wrapper {
         width: 100%;
         display: flex;
         margin: 8px 0;
     }
 
-    .chat-left {
-        justify-content: flex-start;
-    }
-
-    .chat-right {
-        justify-content: flex-end;
-    }
+    .chat-left { justify-content: flex-start; }
+    .chat-right { justify-content: flex-end; }
 
     .chat-bubble {
         display: inline-block;
-        padding: 12px 15px;
+        padding: 14px 16px;
         border-radius: 14px;
         font-size: 16px;
-        line-height: 1.48;
+        line-height: 1.55;
         word-break: break-word;
         background: #eee;
         color: #000;
@@ -842,31 +837,28 @@ def main():
     }
 
     /* bot 색상 */
-    .bot-bubble {
-        background: #f1f0f0;
-    }
+    .bot-bubble { background: #f1f0f0; }
 
     /* user 색상 */
-    .user-bubble {
-        background: #d1e7ff;
-    }
+    .user-bubble { background: #d1e7ff; }
 
-    /* --------------- 반응형 적용 --------------- */
+    /* ------------------------- */
+    /*   반응형 확장 조정        */
+    /* ------------------------- */
 
-    /* 태블릿 (iPad, Galaxy Tab) */
-    @media (max-width: 1024px) {
+    /* iPad & Android Tablet 강제 적용 */
+    @media (max-width: 1400px) and (min-width: 768px) {
         .chat-bubble {
-            max-width: 85% !important;
+            max-width: 90% !important;
         }
     }
 
-    /* 모바일 */
-    @media (max-width: 768px) {
+    /* Mobile phones */
+    @media (max-width: 767px) {
         .chat-bubble {
-            max-width: 92% !important;
+            max-width: 95% !important;
         }
     }
-
     </style>
     """, unsafe_allow_html=True)
 
