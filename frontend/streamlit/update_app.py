@@ -815,56 +815,55 @@ def main():
     st.markdown("""
     <style>
 
-    /* 기본 PC 및 태블릿 세로 모드 / 일반 스타일 */
+    /* 기본 스타일 */
     .chat-wrapper {
-        width: 100%;
-        display: flex;
-        margin: 8px 0;
+        width: 100% !important;
+        display: flex !important;
+        margin: 8px 0 !important;
     }
 
-    .chat-left { justify-content: flex-start; }
-    .chat-right { justify-content: flex-end; }
+    .chat-left { justify-content: flex-start !important; }
+    .chat-right { justify-content: flex-end !important; }
 
     .chat-bubble {
-        display: inline-block;
-        padding: 14px 16px;
-        border-radius: 14px;
-        font-size: 16px;
-        line-height: 1.55;
-        word-break: break-word;
-        background: #eee;
-        color: #000;
-        max-width: 70%; /* 기본 PC/태블릿 세로 스타일 */
+        display: inline-block !important;
+        padding: 14px 16px !important;
+        border-radius: 14px !important;
+        font-size: 16px !important;
+        line-height: 1.55 !important;
+        word-break: break-word !important;
+        background: #eee !important;
+        color: #000 !important;
+        max-width: 70% !important; /* 기본 PC / 태블릿 세로 */
     }
 
     /* bot 색상 */
-    .bot-bubble { background: #f1f0f0; }
+    .bot-bubble { background: #f1f0f0 !important; }
 
     /* user 색상 */
-    .user-bubble { background: #d1e7ff; }
+    .user-bubble { background: #d1e7ff !important; }
 
-    /* ---------------------------- */
-    /*  📱 모바일 (스마트폰 전용)   */
-    /* ---------------------------- */
+    /* ------------------------- */
+    /* 모바일 (스마트폰)         */
+    /* ------------------------- */
     @media (max-width: 767px) {
         .chat-bubble {
             max-width: 95% !important;
         }
     }
 
-    /* -------------------------------------------- */
-    /*  📟 태블릿: 가로 방향일 때만 확장            */
-    /*  (Aspect ratio 체크: width > height 조건)    */
-    /* -------------------------------------------- */
+    /* ------------------------- */
+    /* 태블릿 가로 모드만 확장   */
+    /* ------------------------- */
     @media (min-width: 768px) and (max-width: 1400px) and (orientation: landscape) {
         .chat-bubble {
             max-width: 90% !important;
         }
     }
 
-    /* -------------------------------------------- */
-    /*  📟 태블릿: 세로 모드 → PC와 동일 크기 유지   */
-    /* -------------------------------------------- */
+    /* ------------------------- */
+    /* 태블릿 세로 모드 유지     */
+    /* ------------------------- */
     @media (min-width: 768px) and (max-width: 1400px) and (orientation: portrait) {
         .chat-bubble {
             max-width: 70% !important;
@@ -873,6 +872,7 @@ def main():
 
     </style>
     """, unsafe_allow_html=True)
+
 
 
 
