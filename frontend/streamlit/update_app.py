@@ -814,7 +814,8 @@ def main():
     # 🔧 반응형 말풍선 스타일 적용 (PC 그대로, 모바일/패드만 확대)
     st.markdown("""
     <style>
-    /* 기본 PC 스타일 유지 */
+
+    /* 기본 PC 및 태블릿 세로 모드 / 일반 스타일 */
     .chat-wrapper {
         width: 100%;
         display: flex;
@@ -833,7 +834,7 @@ def main():
         word-break: break-word;
         background: #eee;
         color: #000;
-        max-width: 70%;
+        max-width: 70%; /* 기본 PC/태블릿 세로 스타일 */
     }
 
     /* bot 색상 */
@@ -842,25 +843,37 @@ def main():
     /* user 색상 */
     .user-bubble { background: #d1e7ff; }
 
-    /* ------------------------- */
-    /*   반응형 확장 조정        */
-    /* ------------------------- */
-
-    /* iPad & Android Tablet 강제 적용 */
-    @media (max-width: 1400px) and (min-width: 768px) {
-        .chat-bubble {
-            max-width: 90% !important;
-        }
-    }
-
-    /* Mobile phones */
+    /* ---------------------------- */
+    /*  📱 모바일 (스마트폰 전용)   */
+    /* ---------------------------- */
     @media (max-width: 767px) {
         .chat-bubble {
             max-width: 95% !important;
         }
     }
+
+    /* -------------------------------------------- */
+    /*  📟 태블릿: 가로 방향일 때만 확장            */
+    /*  (Aspect ratio 체크: width > height 조건)    */
+    /* -------------------------------------------- */
+    @media (min-width: 768px) and (max-width: 1400px) and (orientation: landscape) {
+        .chat-bubble {
+            max-width: 90% !important;
+        }
+    }
+
+    /* -------------------------------------------- */
+    /*  📟 태블릿: 세로 모드 → PC와 동일 크기 유지   */
+    /* -------------------------------------------- */
+    @media (min-width: 768px) and (max-width: 1400px) and (orientation: portrait) {
+        .chat-bubble {
+            max-width: 70% !important;
+        }
+    }
+
     </style>
     """, unsafe_allow_html=True)
+
 
 
     # 타이틀
